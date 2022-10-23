@@ -1,0 +1,13 @@
+game:GetService("UserInputService").InputBegan:Connect(function(input)
+					if input.UserInputType == Enum.UserInputType.MouseButton1 then
+						local Position = game.Players.LocalPlayer:GetMouse().Hit
+						local NewPosition = {
+							X = math.round((Position.X)),
+							Y = math.round((Position.Y)),
+							Z = math.round((Position.Z)),
+						}
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1000,3009,3900)
+						task.wait(1)
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(NewPosition.X,NewPosition.Y,NewPosition.Z)
+		        	end
+                end)
